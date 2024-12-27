@@ -1,0 +1,12 @@
+<h1 [ngStyle]="{'color': titleColor}">Building Bridges: Bipartisan Outreach and the Republican Party's Stand on
+    Democracy</h1>
+<div class="container">
+    <app-change-card-style class="card" *ngFor="let card of cards"
+        [ngStyle]="{ 
+            border: titleColor === card.buttonColor ? '2px solid ' + card.buttonColor : '', 
+            'box-shadow': titleColor === card.buttonColor ? '5px 4px 8px ' + card.buttonColor : '',
+            'border-radius': '10px'
+        }"
+        [card]="card" (buttonColor)="handleClick($event)">
+    </app-change-card-style>
+</div>
